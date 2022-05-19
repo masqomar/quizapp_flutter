@@ -13,6 +13,7 @@ class ErrorScreen extends StatefulWidget {
   const ErrorScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ErrorScreenState createState() => _ErrorScreenState();
 }
 

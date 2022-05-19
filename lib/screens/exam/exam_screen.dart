@@ -23,6 +23,7 @@ class DetailExamScreen extends StatefulWidget {
   const DetailExamScreen({Key? key, required this.data}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _DetailExamScreenState createState() => _DetailExamScreenState();
 }
 

@@ -18,6 +18,7 @@ class HistoryExamScreen extends StatefulWidget {
   const HistoryExamScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _HistoryExamScreenState createState() => _HistoryExamScreenState();
 }
 
