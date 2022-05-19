@@ -121,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       const BorderRadius.only(bottomLeft: Radius.circular(100)),
                 ),
                 child: const Center(
-                  child: Text("LatihCPNS",
+                  child: Text("Quiz App",
                       style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
