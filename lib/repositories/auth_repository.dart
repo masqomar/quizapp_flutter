@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AuthRepository {
   Future<UserModel> getUser() async {
     try {
-      final url = Uri.parse(urlApi + 'user');
+      final url = Uri.parse('${urlApi}user');
       final token = await getToken();
 
       final response = await http.get(
@@ -35,7 +35,7 @@ class AuthRepository {
 
   Future<Map<String, dynamic>> login(String email, String password) async {
     try {
-      final url = Uri.parse(urlApi + 'login');
+      final url = Uri.parse('${urlApi}login');
 
       Map dataBody = {
         'email': email,
@@ -65,7 +65,7 @@ class AuthRepository {
 
   Future<Map<String, dynamic>> register(UserModel user, String password) async {
     try {
-      final url = Uri.parse(urlApi + 'register');
+      final url = Uri.parse('${urlApi}register');
 
       Map dataBody = {
         "userName": user.userName,
@@ -97,7 +97,7 @@ class AuthRepository {
 
   Future<Map<String, dynamic>> update(UserModel user, String password) async {
     try {
-      final url = Uri.parse(urlApi + 'update');
+      final url = Uri.parse('${urlApi}update');
       final token = await getToken();
 
       Map dataBody = {
@@ -132,7 +132,7 @@ class AuthRepository {
 
   Future<Map<String, dynamic>> logout() async {
     try {
-      final url = Uri.parse(urlApi + 'logout');
+      final url = Uri.parse('${urlApi}logout');
       final token = await getToken();
 
       final response = await http.get(

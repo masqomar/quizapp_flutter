@@ -7,7 +7,7 @@ import 'dart:convert';
 class ArticleRepository {
   Future<List<ArticleModel>> getArticle(int page) async {
     try {
-      final url = Uri.parse(urlApi + 'artikel/get-data?page=$page');
+      final url = Uri.parse('${urlApi}artikel/get-data?page=$page');
       final token = await getToken();
 
       final response = await http.get(

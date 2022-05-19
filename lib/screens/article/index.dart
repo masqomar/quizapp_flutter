@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:frontend/configs/app_theme.dart';
 import 'package:frontend/providers/article/article_provider.dart';
 import 'package:frontend/providers/global_provider.dart';
@@ -165,6 +167,7 @@ class _IndexArticleScreenState extends State<IndexArticleScreen> {
     if (controller.position.extentAfter == 0) {
       context.read(globalLoading).state = true;
       await context.read(articleProvider.notifier).nextPage();
+      // ignore: use_build_context_synchronously
       context.read(globalLoading).state = false;
     }
   }

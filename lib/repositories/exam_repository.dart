@@ -8,7 +8,7 @@ import 'dart:convert';
 class ExamRepository {
   Future<List<PaketModel>> getPaket() async {
     try {
-      final url = Uri.parse(urlApi + 'paket/get-data');
+      final url = Uri.parse('${urlApi}paket/get-data');
       final token = await getToken();
 
       final response = await http.get(
@@ -36,7 +36,7 @@ class ExamRepository {
 
   Future<List<HistoryModel>> getHistory() async {
     try {
-      final url = Uri.parse(urlApi + 'hasil-latihan/get-data');
+      final url = Uri.parse('${urlApi}hasil-latihan/get-data');
       final token = await getToken();
 
       final response = await http.get(
@@ -64,7 +64,7 @@ class ExamRepository {
 
   Future<List<ExamModel>> getSoal(int idPaket) async {
     try {
-      final url = Uri.parse(urlApi + 'soal/get-data/$idPaket');
+      final url = Uri.parse('${urlApi}soal/get-data/$idPaket');
       final token = await getToken();
 
       final response = await http.get(
@@ -99,7 +99,7 @@ class ExamRepository {
     DateTime end,
   ) async {
     try {
-      final url = Uri.parse(urlApi + 'soal/hasil-latihan/simpan');
+      final url = Uri.parse('${urlApi}soal/hasil-latihan/simpan');
       final token = await getToken();
 
       Map dataBody = {
