@@ -1,4 +1,4 @@
-import 'package:frontend/configs/app_helper.dart';
+import 'dart:developer';
 import 'package:frontend/models/history_model.dart';
 import 'package:frontend/providers/exam/exam_provider.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +31,8 @@ class _HistoryExamScreenState extends State<HistoryExamScreen> {
       history = value;
     }).catchError((onError) {
       history = [];
-      messageDialog(context, onError['message']);
+      inspect(onError);
+      // messageDialog(context, onError['message']);
     });
     isLoading.value = false;
   }

@@ -66,15 +66,6 @@ class _EditUserScreenState extends State<EditUserScreen> {
         icon: Icons.map,
         controller: addressC);
 
-    var foto = PrimaryTextField(
-      hintText: "Foto",
-      txtInputType: TextInputType.text,
-      icon: Icons.camera,
-      onTap: () {
-        FocusScope.of(context).requestFocus(FocusNode());
-      },
-    );
-
     var submit = PrimaryButton(
       hint: "UPDATE",
       onTap: () {},
@@ -90,22 +81,12 @@ class _EditUserScreenState extends State<EditUserScreen> {
         padding: const EdgeInsets.all(8.0),
         child: ListView(
           children: <Widget>[
-            Container(
-              margin: const EdgeInsets.only(top: 16.0),
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width,
-              child: Image.asset(
-                "assets/images/default.png",
-                fit: BoxFit.contain,
-              ),
-            ),
             userName,
             firstName,
             lastName,
             email,
             phone,
             address,
-            foto,
             submit,
           ],
         ),

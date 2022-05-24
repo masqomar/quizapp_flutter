@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:frontend/configs/app_helper.dart';
 import 'package:frontend/configs/app_service.dart';
 import 'package:frontend/models/exam_model.dart';
@@ -49,11 +51,13 @@ class ExamRepository {
 
       var data = json.decode(response.body);
 
+      inspect(data);
+
       if (response.statusCode == 200) {
         var objects = data['data'] as List;
-        var dataAticle = objects.map((e) => HistoryModel.fromJson(e)).toList();
+        var dataHistory = objects.map((e) => HistoryModel.fromJson(e)).toList();
 
-        return dataAticle;
+        return dataHistory;
       } else {
         throw (data['message']);
       }

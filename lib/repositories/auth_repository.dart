@@ -143,13 +143,8 @@ class AuthRepository {
       );
 
       final Map<String, dynamic> data = json.decode(response.body);
-
-      if (response.statusCode == 200) {
-        removeSessionUser();
-        return {'success': data['success'], 'message': data['message']};
-      } else {
-        throw (data['message']);
-      }
+      removeSessionUser();
+      return {'success': data['success'], 'message': 'logout successfully'};
     } catch (e) {
       throw catchErr(e);
     }

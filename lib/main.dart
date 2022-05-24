@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Quiz App',
+      title: 'Quiz App CPNS',
       debugShowCheckedModeBanner: false,
       theme: theme(),
       onGenerateRoute: AppRouter.onGenerateRoute,
@@ -66,7 +66,7 @@ class _SplashScreenState extends State<SplashScreen> {
     context.read(authRepository).readSessionUser().then((value) {
       Navigator.pushNamedAndRemoveUntil(
         context,
-        value != null ? '/main-screen' : '/login-screen',
+        value != null ? '/index-exam-screen' : '/login-screen',
         (_) => false,
       );
     });

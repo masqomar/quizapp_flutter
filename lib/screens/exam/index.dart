@@ -1,6 +1,4 @@
-import 'package:frontend/configs/app_helper.dart';
-import 'package:frontend/configs/app_style_font.dart';
-import 'package:frontend/configs/app_theme.dart';
+import 'package:frontend/configs/config.dart';
 import 'package:frontend/models/exam_model.dart';
 import 'package:frontend/providers/exam/exam_provider.dart';
 import 'package:frontend/providers/exam/pakage_provider.dart';
@@ -26,6 +24,7 @@ class IndexExamScreen extends StatefulWidget {
 
 class _IndexExamScreenState extends State<IndexExamScreen> {
   ValueNotifier<bool> isLoading = ValueNotifier(false);
+
   Future<void> getSoal(PaketModel paket) async {
     isLoading.value = true;
     await context
@@ -50,6 +49,14 @@ class _IndexExamScreenState extends State<IndexExamScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Pilih Paket"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/history-exam-screen');
+            },
+            icon: const Icon(Icons.history),
+          ),
+        ],
       ),
       body: ValueListenableBuilder<bool>(
         valueListenable: isLoading,
@@ -122,6 +129,12 @@ class _IndexExamScreenState extends State<IndexExamScreen> {
             ],
           );
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/index-user-screen');
+        },
+        child: const Icon(Icons.person),
       ),
     );
   }

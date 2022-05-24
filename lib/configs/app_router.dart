@@ -1,10 +1,10 @@
 import 'package:frontend/main.dart';
-import 'package:frontend/models/article_model.dart';
 import 'package:frontend/models/exam_model.dart';
 import 'package:frontend/screens/exam/exam_screen.dart';
 import 'package:frontend/screens/exam/history_screen.dart';
 import 'package:frontend/screens/exam/result_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/screens/user/index.dart';
 import '../screens/screen.dart';
 
 class AppRouter {
@@ -18,12 +18,6 @@ class AppRouter {
 
       case '/register-screen':
         return RegisterScreen.route();
-
-      case '/main-screen':
-        return MainScreen.route();
-
-      case '/notification-screen':
-        return NotificationScreen.route();
 
       case '/index-exam-screen':
         return IndexExamScreen.route();
@@ -42,21 +36,14 @@ class AppRouter {
 
         return ResultExamScreen.route(questions, answers, start, end);
 
-      case '/index-article-screen':
-        return IndexArticleScreen.route();
-
-      case '/show-article-screen':
-        final ArticleModel articleModel = settings.arguments as ArticleModel;
-        return ShowArticleScreen.route(articleModel);
+      case '/history-exam-screen':
+        return HistoryExamScreen.route();
 
       case '/index-user-screen':
         return IndexUserScreen.route();
 
       case '/edit-user-screen':
         return EditUserScreen.route();
-
-      case '/history-exam-screen':
-        return HistoryExamScreen.route();
 
       default:
         return _errorRoute();

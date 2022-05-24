@@ -37,13 +37,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
   onLogin(String email, String password) async {
     isLoading.value = true;
+
     await context
         .read(authProvider.notifier)
         .login(email, password)
         .then((value) {
       messageDialog(context, value['message']);
       Navigator.pushNamedAndRemoveUntil(
-          context, '/main-screen', (route) => false);
+          context, '/index-exam-screen', (route) => false);
 
       isLoading.value = false;
     }).catchError((onError) {
@@ -121,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       const BorderRadius.only(bottomLeft: Radius.circular(100)),
                 ),
                 child: const Center(
-                  child: Text("Quiz App",
+                  child: Text("Quiz App CPNS",
                       style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
