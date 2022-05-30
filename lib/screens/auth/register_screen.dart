@@ -44,7 +44,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         .then((value) {
       messageDialog(context, value['message']);
       Navigator.pushNamedAndRemoveUntil(
-          context, '/main-screen', (route) => false);
+          context, '/index-exam-screen', (route) => false);
     }).catchError((onError) {
       messageDialog(context, onError['message']);
     });
